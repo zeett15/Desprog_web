@@ -1,0 +1,21 @@
+form{
+    margin: 20px;
+}
+from input, button{
+    padding: 5px;
+}
+
+table{
+    width: 100px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td{
+    border:1px solid #cdcdcd;
+}
+
+table td, table th{
+    padding: 10px;
+    text-align: left;
+}
