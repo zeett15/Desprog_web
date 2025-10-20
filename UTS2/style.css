@@ -1,0 +1,264 @@
+/* ===========================
+   Simple & Readable CSS File
+   Untuk pemula: tiap bagian diberi komentar
+   =========================== */
+
+/* ==============
+   Variables
+   ============== */
+:root {
+  --bg: #eef7fb;       /* warna latar halaman */
+  --card: #ffffff;     /* warna kartu */
+  --text: #123;        /* warna teks utama */
+  --accent: #0b3b66;   /* warna tombol / aksen */
+  --muted: #666;       /* teks kecil */
+}
+
+/* ==============
+   Basic reset
+   ============== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ==============
+   Layout - Landing hero (jika digunakan)
+   ============== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.hero .box {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  max-width: 800px;
+  text-align: center;
+}
+
+/* ==============
+   Typography
+   ============== */
+h1 {
+  font-size: 36px;
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+
+.small {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.lead {
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* ==============
+   Button (tombol Selanjutnya)
+   ============== */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ==============
+   Page layout - dua kolom untuk halaman daftar
+   ============== */
+.page {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 10px;
+  padding-bottom: 40px;
+}
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  width: 45%;
+  min-width: 300px;
+}
+
+/* ==============
+   Form - gaya sederhana untuk input
+   ============== */
+form label {
+  display: block;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+/* gabungkan select agar tampil konsisten dengan input */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* textarea bisa diubah ukurannya oleh user (vertical) */
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* untuk field berat/tinggi berdampingan */
+.row {
+  display: flex;
+  margin-top: 6px;
+}
+
+/* radio (jenis kelamin) - tampil berdampingan */
+/* .radio dibuat flex agar pilihan sejajar, perempuan akan berada di kanan
+   sesuai urutan elemen HTML */
+.radio {
+  display: flex;
+  gap: 12px;            /* jarak antar pilihan */
+  align-items: center;  /* rata tengah vertikal */
+  margin-top: 4px;
+}
+
+/* styling kecil untuk label radio dan input radio */
+.radio label {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* tombol submit penuh lebar */
+.submit {
+  margin-top: 12px;
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ==============
+   Peserta terdaftar (list)
+   ============== */
+.participant {
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.participant .meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.participant .note {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* ==============
+   Responsive: layar sempit
+   ============== */
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .card {
+    width: 100%;
+  }
+}
+
+/* tambahan gaya untuk daftar peserta: kiri/kanan */
+#listPeserta .participant {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  padding: 10px;
+  background: linear-gradient(180deg, #ffffff, #fbfeff);
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* kiri: informasi singkat */
+#listPeserta .participant .left {
+  flex: 1;
+  padding-right: 8px;
+}
+
+/* kanan: kotak motivasi */
+#listPeserta .participant .right {
+  width: 40%;
+  min-width: 180px;
+  background: #ffffff;
+  border: 1px solid #e9f0f5;
+  border-radius: 6px;
+  padding: 8px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* gaya teks di kanan */
+#listPeserta .participant .motivation {
+  font-size: 13px;
+  color: #333;
+  min-height: 46px;
+}
+
+/* highlight kecil saat hover */
+#listPeserta .participant:hover {
+  transform: translateY(-2px);
+  transition: transform .18s ease;
+}
+
+/* error styles (pasti ada) */
+.error { outline: none; border-color: #e74c3c !important; }
+.error-msg {
+  display: block;
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+/* ...existing code... */
+
+/* ==============
+   Catatan singkat untuk pemula:
+   - .radio { display:flex } membuat radio sejajar
+   - <select> distilir sama seperti input agar konsisten
+   - untuk menukar posisi radio, ubah urutan HTML (laki/perempuan)
+   ============== */

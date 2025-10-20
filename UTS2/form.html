@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pendaftaran</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="card left">
+      <h2>Form Pendaftaran</h2>
+
+      <!-- form: gunakan name untuk setiap field agar PHP bisa baca -->
+      <form id="formPendaftaran" method="post" action="proses.php">
+        <label>Nama</label>
+        <input type="text" name="nama" placeholder="Masukan Nama Lengkap">
+
+        <label>Utusan</label>
+        <input type="text" name="utusan" placeholder="cth. Persianas Asad">
+
+        <label>Tanggal Lahir</label>
+        <input type="date" name="tgl_lahir">
+
+        <div class="row">
+          <div style="flex:1">
+            <label>Berat (kg)</label>
+            <input type="number" name="berat" placeholder="Kg">
+          </div>
+          <div style="flex:1;margin-left:10px">
+            <label>Tinggi (cm)</label>
+            <input type="number" name="tinggi" placeholder="Cm">
+          </div>
+        </div>
+
+        <label>Jenis Kelamin</label>
+        <div class="radio">
+          <label><input type="radio" name="jk" value="Laki-Laki" checked> Laki-Laki</label>
+          <label><input type="radio" name="jk" value="Perempuan"> Perempuan</label>
+        </div>
+
+        <label>Kategori</label>
+        <select name="kategori">
+          <option value="">--Pilih kategori--</option>
+          <option value="1">Tanding Kelas A</option>
+          <option value="2">Seni Tunggal</option>
+          <option value="3">Seni Ganda</option>
+          <option value="4">Seni Beregu</option>
+        </select>
+
+        <label>No. Hp</label>
+        <input type="text" name="hp" placeholder="cth. 08xxxx">
+
+        <label>Motivasi</label>
+        <textarea name="motivasi" placeholder="Motivasi Anda"></textarea>
+
+        <button type="submit" class="submit">submit</button>
+        <!-- tambahkan tombol reset (type="button" supaya tidak submit form) -->
+        <button type="button" id="resetBtn" class="submit" style="background:#888;margin-top:8px">Reset</button>
+      </form>
+    </div>
+
+    <div class="card right">
+      <h2>Peserta terdaftar</h2>
+      <div id="listPeserta"><!-- Peserta akan ditambahkan di sini --></div>
+    </div>
+  </div>
+
+  <!-- jQuery lokal -->
+  <script src="jquery-3.7.1.js"></script>
+  <!-- kode JavaScript terpisah -->
+  <script src="script.js"></script>
+</body>
+</html>
