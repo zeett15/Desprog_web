@@ -1,22 +1,13 @@
-/* ===========================
-   Simple & Readable CSS File
-   Untuk pemula: tiap bagian diberi komentar
-   =========================== */
 
-/* ==============
-   Variables
-   ============== */
 :root {
-  --bg: #eef7fb;       /* warna latar halaman */
-  --card: #ffffff;     /* warna kartu */
-  --text: #123;        /* warna teks utama */
-  --accent: #0b3b66;   /* warna tombol / aksen */
-  --muted: #666;       /* teks kecil */
+  --bg: #eef7fb;       
+  --card: #ffffff;     
+  --text: #123;        
+  --accent: #0b3b66;   
+  --muted: #666;       
 }
 
-/* ==============
-   Basic reset
-   ============== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,9 +21,7 @@ html, body {
   color: var(--text);
 }
 
-/* ==============
-   Layout - Landing hero (jika digunakan)
-   ============== */
+
 .hero {
   min-height: 80vh;
   display: flex;
@@ -50,9 +39,7 @@ html, body {
   text-align: center;
 }
 
-/* ==============
-   Typography
-   ============== */
+
 h1 {
   font-size: 36px;
   margin-bottom: 6px;
@@ -70,9 +57,7 @@ h1 {
   margin-bottom: 18px;
 }
 
-/* ==============
-   Button (tombol Selanjutnya)
-   ============== */
+
 .btn {
   display: inline-block;
   background: var(--accent);
@@ -83,9 +68,7 @@ h1 {
   font-weight: 700;
 }
 
-/* ==============
-   Page layout - dua kolom untuk halaman daftar
-   ============== */
+
 .page {
   display: flex;
   gap: 20px;
@@ -104,9 +87,7 @@ h1 {
   min-width: 300px;
 }
 
-/* ==============
-   Form - gaya sederhana untuk input
-   ============== */
+
 form label {
   display: block;
   font-size: 13px;
@@ -114,7 +95,7 @@ form label {
   margin-bottom: 6px;
 }
 
-/* gabungkan select agar tampil konsisten dengan input */
+
 input[type="text"],
 input[type="number"],
 input[type="date"],
@@ -127,29 +108,24 @@ textarea {
   font-size: 14px;
 }
 
-/* textarea bisa diubah ukurannya oleh user (vertical) */
 textarea {
   min-height: 80px;
   resize: vertical;
 }
 
-/* untuk field berat/tinggi berdampingan */
 .row {
   display: flex;
   margin-top: 6px;
 }
 
-/* radio (jenis kelamin) - tampil berdampingan */
-/* .radio dibuat flex agar pilihan sejajar, perempuan akan berada di kanan
-   sesuai urutan elemen HTML */
+
 .radio {
   display: flex;
-  gap: 12px;            /* jarak antar pilihan */
-  align-items: center;  /* rata tengah vertikal */
+  gap: 12px;            
+  align-items: center;  
   margin-top: 4px;
 }
 
-/* styling kecil untuk label radio dan input radio */
 .radio label {
   font-size: 14px;
   display: inline-flex;
@@ -157,7 +133,6 @@ textarea {
   gap: 6px;
 }
 
-/* tombol submit penuh lebar */
 .submit {
   margin-top: 12px;
   background: #222;
@@ -169,9 +144,7 @@ textarea {
   cursor: pointer;
 }
 
-/* ==============
-   Peserta terdaftar (list)
-   ============== */
+
 .participant {
   background: #f7f7f7;
   padding: 10px;
@@ -189,9 +162,7 @@ textarea {
   margin-top: 6px;
 }
 
-/* ==============
-   Responsive: layar sempit
-   ============== */
+
 @media (max-width: 900px) {
   .page {
     flex-direction: column;
@@ -202,7 +173,7 @@ textarea {
   }
 }
 
-/* tambahan gaya untuk daftar peserta: kiri/kanan */
+
 #listPeserta .participant {
   display: flex;
   gap: 12px;
@@ -215,13 +186,13 @@ textarea {
   box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
 
-/* kiri: informasi singkat */
+
 #listPeserta .participant .left {
   flex: 1;
   padding-right: 8px;
 }
 
-/* kanan: kotak motivasi */
+
 #listPeserta .participant .right {
   width: 40%;
   min-width: 180px;
@@ -232,20 +203,19 @@ textarea {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
-/* gaya teks di kanan */
+
 #listPeserta .participant .motivation {
   font-size: 13px;
   color: #333;
   min-height: 46px;
 }
 
-/* highlight kecil saat hover */
+
 #listPeserta .participant:hover {
   transform: translateY(-2px);
   transition: transform .18s ease;
 }
 
-/* error styles (pasti ada) */
 .error { outline: none; border-color: #e74c3c !important; }
 .error-msg {
   display: block;
@@ -254,11 +224,3 @@ textarea {
   margin-top: 6px;
   margin-bottom: 2px;
 }
-/* ...existing code... */
-
-/* ==============
-   Catatan singkat untuk pemula:
-   - .radio { display:flex } membuat radio sejajar
-   - <select> distilir sama seperti input agar konsisten
-   - untuk menukar posisi radio, ubah urutan HTML (laki/perempuan)
-   ============== */
