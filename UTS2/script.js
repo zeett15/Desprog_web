@@ -1,5 +1,4 @@
-// script.js - versi ringkas dan jelas untuk pemula
-
+]
 (function($){
     $(function(){
         const MIN_YEAR = 1995, MAX_YEAR = 2008;
